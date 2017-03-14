@@ -15,7 +15,7 @@ exports.STATE_MARKER = "/* Add New States Above */";
 
 exports.addToFile = function(filename,lineToAdd,beforeMarker){
     try {
-        var fullPath = path.resolve(process.cwd(),filename);
+        var fullPath = path.resolve('/app',filename);
         var fileSrc = fs.readFileSync(fullPath,'utf8');
 
         var indexOf = fileSrc.indexOf(beforeMarker);
@@ -125,7 +125,7 @@ exports.getParentModule = function(dir){
 exports.askForModule = function(type,that,cb){
 
     var modules = that.config.get('modules');
-    var mainModule = ngParseModule.parse('app.js');
+    var mainModule = ngParseModule.parse('app/app.js');
     mainModule.primary = true;
 
     if (!modules || modules.length === 0) {
