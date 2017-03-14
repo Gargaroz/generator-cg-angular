@@ -1,11 +1,18 @@
 describe('<%= _.camelize(name) %>', function() {
 
-  beforeEach(module('<%= appname %>'));
+  var
+  <%= _.camelize(name) %>;
 
-  it('should ...', inject(function(<%= _.camelize(name) %>) {
+  beforeEach(function(params) {
+    angular.mock.module('<%= appname %>');
 
-    //expect(<%= _.camelize(name) %>.doSomething()).toEqual('something');
+    inject(function(_<%= _.camelize(name) %>_) {
+      <%= _.camelize(name) %> = _<%= _.camelize(name) %>_
+    });
+  });
 
+  it('should be defined', inject(function() {
+    expect(<%= _.camelize(name) %>).toBeTruthy();
   }));
 
 });
