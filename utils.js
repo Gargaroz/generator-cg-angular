@@ -78,6 +78,7 @@ exports.inject = function(filename,that,module) {
             injectFileRef = path.relative(path.dirname(module.file),filename);
         }
         injectFileRef = injectFileRef.replace(/\\/g,'/');
+        injectFileRef = injectFileRef.replace(/app\//,'');
         var lineTemplate = _.template(config.template)({filename:injectFileRef});
         exports.addToFile(configFile,lineTemplate,config.marker);
         that.log.writeln(chalk.green(' updating') + ' %s',path.basename(configFile));
