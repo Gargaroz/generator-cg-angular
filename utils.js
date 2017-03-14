@@ -15,7 +15,7 @@ exports.STATE_MARKER = "/* Add New States Above */";
 
 exports.addToFile = function(filename,lineToAdd,beforeMarker){
     try {
-        var fullPath = path.resolve('/app',filename);
+        var fullPath = path.resolve(process.cwd() + 'app/',filename);
         var fileSrc = fs.readFileSync(fullPath,'utf8');
 
         var indexOf = fileSrc.indexOf(beforeMarker);
