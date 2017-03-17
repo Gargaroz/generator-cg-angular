@@ -9,7 +9,6 @@
      * @param {} parameterName Parameter description
      * @description
      */
-
     angular
     .module('<%= appname %>')
     .directive('<%= _.camelize(name) %>',<%= _.camelize(name) %>);
@@ -33,7 +32,17 @@
     <%= _.camelize(_.classify(name)) + 'Ctrl' %>.$inject = [];
 
     function <%= _.camelize(_.classify(name)) + 'Ctrl' %>() {
+        // PRIVATE VARIABLES
         var vm = this;
+
+        // EXPOSED VARIABLES AND FUNCTIONS
+
+
+        // PUBLIC FUNCTIONS IMPLEMENTATIONS
+
+
+        // PRIVATE FUNCTIONS
+
     }
 
 })();
