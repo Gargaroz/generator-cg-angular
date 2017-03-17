@@ -1,9 +1,18 @@
 (function() {
     'use-strict';
 
+    /**
+     * @ngdoc directive
+     * @name <%= appname %>.directive:<%= _.camelize(name) %>
+     * @restrict E
+     * @scope
+     * @param {} parameterName Parameter description
+     * @description
+     */
+
     angular
     .module('<%= appname %>')
-    .directive('<%= _.camelize(name) %>',<%= _.camelize(name) %>)
+    .directive('<%= _.camelize(name) %>',<%= _.camelize(name) %>);
     
     function <%= _.camelize(name) %>() {
         var directive = {
@@ -11,7 +20,7 @@
             templateUrl: '<%= htmlPath %>',
             scope: {},
             bindToController: {},
-            controller: '<%= _.camelize(_.classify(name)) + "Ctrl" %>',
+            controller: <%= _.camelize(_.classify(name)) + 'Ctrl' %>,
             controllerAs: '<%= _.camelize(name).toLowerCase() + "ctrl" %>',
             link: linkFunc
         };
