@@ -85,12 +85,12 @@ exports.inject = function(filename,that,module) {
     }
 };
 
-exports.injectRoute = function(moduleFile,uirouter,name,route,routeUrl,that){
+exports.injectRoute = function(moduleFile,uirouter,name,route,routeUrl,that,ctrlName){
 
     routeUrl = routeUrl.replace(/\\/g,'/');
 
     if (uirouter){
-        var code = '$stateProvider.state(\''+name+'\', {\n        url: \''+route+'\',\n        templateUrl: \''+routeUrl+'\'\n    });';
+        var code = '$stateProvider.state(\''+name+'\', {\n        url: \''+route+'\',\n        templateUrl: \''+routeUrl+'\',\n        controller: \''+ctrlName+'\',\n        controllerAs: \''+ctrlName.toLowerCase()+'\'\n    });';
         exports.addToFile(moduleFile,code,exports.STATE_MARKER);
     } else {
         exports.addToFile(moduleFile,'$routeProvider.when(\''+route+'\',{templateUrl: \''+routeUrl+'\'});',exports.ROUTE_MARKER);

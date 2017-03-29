@@ -19,7 +19,7 @@
         // PRIVATE VARIABLES
 
 
-        // EXPOSED VARIABLES AND FUNCTIONS
+        // PUBLIC VARIABLES AND FUNCTIONS
         var <%= _.camelize(name) %> = {};
 
         return <%= _.camelize(name) %>;

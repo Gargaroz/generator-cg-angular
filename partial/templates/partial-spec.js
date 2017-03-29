@@ -1,18 +1,17 @@
 describe('<%= ctrlname %>', function() {
 
-    beforeEach(module('<%= appname %>'));
+    var ctrl;
 
-    var scope,ctrl;
-
-    beforeEach(inject(function($rootScope, $controller) {
-      scope = $rootScope.$new();
-      ctrl = $controller('<%= ctrlname %>', {$scope: scope});
-    }));
-
-    it('should ...', inject(function() {
-
-        expect(1).toEqual(1);
+    beforeEach(function() {
+        angular.mock.module('<%= appname %>')
         
+        inject(function($controller) {
+            ctrl = $controller('<%= ctrlname %>');
+        });
+    });
+
+    it('should be defined', inject(function() {
+        expect(ctrl).toBeTruthy();
     }));
 
 });
